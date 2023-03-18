@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="main.css" />
+    <title>Form_exer</title>
+  </head>
+  <body>
+    <header>
+      <button onclick="btn_form()">Form.</button>
+      <button onclick="btn_saved()">Saved Forms.</button>
+    </header>
+    <main>
+      <form id="form_input" style="display: none;">
+        <input type="text" id="input_title" placeholder="Write a Title." />
+        <input type="text" id="input_descrition" placeholder="Write about." />
+        <input type="text" id="input_img" placeholder="Copy an image link." />
+        <button type="submit" onclick="add_card()">Add.</button>
+      </form>
+      <div id="card_container"  style="display: none;" >
+        <div class="card">
+         <!-- <div class="header">
+            <span class="header_text">Title</span>
+          </div>
+          <div class="content">
+            <p class="content_text">random text</p>
+          </div>
+          <div class="image">
+            
+          </div>
+        </div> -->
+      </div>
+    </main>
+  </body>
+  <script src="main.js"></script>
+</html>
