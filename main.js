@@ -4,7 +4,7 @@ const input_descrition = document.querySelector("#input_descrition");
 const input_img = document.querySelector("#input_img");
 
 
-// form and card container
+// form input and card container
 const form_input = document.querySelector("#form_input");
 const card_container = document.querySelector("#card_container");
 
@@ -12,17 +12,20 @@ const card_container = document.querySelector("#card_container");
 // array cards
 let cards = [];
 
-
+// Get the cards stored and put them in the array vector
 let cards_storage = JSON.parse(localStorage.getItem("saved_cards"));
 
 if (cards_storage != null) {
         cards = cards_storage;
  }
 
-console.log(cards_storage);
 
+
+// Reload the page
 udpateview ();
 
+
+// button to make appear the form
 function btn_form() {
     if (form_input.style.display == "block") {
     
@@ -35,6 +38,8 @@ function btn_form() {
         card_container.style.display = "none";
 }
 
+
+// button to make appear the saved cards 
 function btn_saved() {
     
     if (card_container.style.display == "block") {
@@ -47,6 +52,8 @@ function btn_saved() {
         form_input.style.display = "none";
     
 }
+
+
 
 function udpateview() {
     // clean in the card container
@@ -103,6 +110,25 @@ function add_card() {
    
     event.preventDefault();
 
+    if (!input_title.value) {
+        
+        alert("Write a title");
+        return;
+
+    } else if (!input_descrition.value) {
+
+        alert("Write a descrition");
+        return;
+
+    } else if (!input_img.value) {
+
+        alert("Copy an image link");
+        return;
+
+    }
+
+
+
     const card = {
         title: input_title.value ,
         descrition: input_descrition.value,
@@ -120,6 +146,8 @@ function add_card() {
 
     // update the card container
     udpateview();
+
+    form_input.reset();
 
 
 
